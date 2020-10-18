@@ -13,6 +13,8 @@ Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https:
 * Uso de filtros HEPA.
 * Programación y uso de microcontroladores.
 
+<br>
+<br>
 ## Primer RemoVir, un _Mínimo Producto Viable_
 Hemos trabajado con un Split modelo XXX. Que ha resultado muy adecuado tanto para la sustitución de la electrócnica como para acomodar los filtros HEPA.
 
