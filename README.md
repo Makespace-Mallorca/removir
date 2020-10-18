@@ -35,12 +35,9 @@ Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https:
 * Microcontroladores ESP8266.
 * Sensores
 * Comunicaciones MQTT
-
-<br>
-<br>
 <br>
 
-<img src="./img/IMG_9772.JPG" width="300" align="right" />
+<img src="./img/IMG_9772.JPG" width="200" align="right" />
 
 ## Primer RemoVir, un _Mínimo Producto Viable_
 Hemos trabajado sobre un Split marca ¿?. Que ha resultado muy adecuado tanto para la sustitución de la electrócnica como para acomodar los filtros HEPA. Aunque se trata de un MPV. pretendemos que alcance un nivel H13 o superior según el estándar europeo EN 1822-1:2009. Incorporaremos un completo sistemas de medición de calidad de aire, CO2, COV, temperatura, humedad y presión atmosférica de manera que sea capaz de adaptar su funcionamiento a las condiciones detectadas.
@@ -48,8 +45,14 @@ Hemos trabajado sobre un Split marca ¿?. Que ha resultado muy adecuado tanto pa
 <img src="./img/IMG_9900.JPG" width="200" align="left" />
 
 ### Filtro HEPA (High Efficiency Particulate Air)
+Un filtro HEPA funciona con diferentes principios. Lo que determina el comportamiento de la parte impulsora de aire. Una regla básica a tener en cuenta es que una mayor presión de aire puede bajar la eficiencia en la captura de componentes muy pequeños como virus.
 El producto elegido ha sido ¿?...
 <img src="./img/HEPA_Fundamentos.png" width="300" align="center" />
+
+### Electrónica
+Se ha planteado utilizar el WEMOS D1 MINI Pro. Que es un procesador tipo ESP8266 de 16 bits con programación nativa en C++.
+El borrador del esquemático de momento es este:
+<img src="./removir_breadboard.png" align="center" />
 
 ### Certificación
 Como nos gusta saber si el trabajo está bien hecho, y sobre todo, si cumple su función. Una vez instalado mediremos los parámetros de operación como caudal de aire, reducción de COV, etc... para sacar conclusiones sobre mejoras en la siguiente iteracción.
