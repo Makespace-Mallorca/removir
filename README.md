@@ -19,6 +19,9 @@ una correcta ventilación de los espacios cerrados.
 Lo que es tan importante como mantener una distancia 
 mínima.
 ```
+<br>
+<br>
+<br>
 
 Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https://twitter.com/erguro1973) y de los asistente a varios talleres realizados en el [Fablab de Mallorca](http://fablabmallorca.com/) y organizados por la [Asociación de Makers Mallorca](https://makespacemallorca.org/).
 
@@ -28,15 +31,25 @@ Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https:
 * Análisis de flujos de aire.
 * Control de motores.
 * Uso de filtros HEPA.
-* Programación y uso de microcontroladores.
+* Programación C++ e IDE de Arduino
+* Microcontroladores ESP8266.
+* Sensores
+* Comunicaciones MQTT
 
 <br>
 <br>
 <br>
-<img src="./img/IMG_9772.JPG" width="400" align="right" />
+
+<img src="./img/IMG_9772.JPG" width="300" align="right" />
 
 ## Primer RemoVir, un _Mínimo Producto Viable_
 Hemos trabajado sobre un Split marca ¿?. Que ha resultado muy adecuado tanto para la sustitución de la electrócnica como para acomodar los filtros HEPA. Aunque se trata de un MPV. pretendemos que alcance un nivel H13 o superior según el estándar europeo EN 1822-1:2009. Incorporaremos un completo sistemas de medición de calidad de aire, CO2, COV, temperatura, humedad y presión atmosférica de manera que sea capaz de adaptar su funcionamiento a las condiciones detectadas.
+
+<img src="./img/IMG_9900.JPG" width="200" align="left" />
+
+### Filtro HEPA (High Efficiency Particulate Air)
+El producto elegido ha sido ¿?...
+<img src="./img/HEPA_Fundamentos.png" width="300" align="center" />
 
 ### Certificación
 Como nos gusta saber si el trabajo está bien hecho, y sobre todo, si cumple su función. Una vez instalado mediremos los parámetros de operación como caudal de aire, reducción de COV, etc... para sacar conclusiones sobre mejoras en la siguiente iteracción.
