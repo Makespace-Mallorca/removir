@@ -3,10 +3,21 @@
 
 Podrás montar un **purificador de aire con filtro HEPA** por poco más del coste de los filtros y lo más importante. Ayudarás a mantener el medio ambiente mientras proteges del contagio de COVID-19 el espacio que más necesites.
 
-<img src="./img/TablaRiesgosCOVID.png" width="400" align="center" />
+<img src="./img/TablaRiesgosCOVID.png" width="400" align="left" />
 
 ```text
-Hemos querido enfocar nuestros esfuerzos a este tipo de dispositivos porque creemos que pueden ser una importante ayuda a evitar contagios. Las últimas evidencias científicas demuestran la transmisión de virus por aerosoles, es decir, por el mismo hecho de respirar. Esto aumenta el nivel de COV (Compuestos Orgánicos Volátiles entre los que se encuentra el virus SARS-CoV-2) algo que va correlacionado con la concentración de CO2. Esta evidencia hace necesaria una correcta ventilación de los espacios cerrados. Lo que es tan importante como mantener una distancia mínima.
+Hemos querido enfocar nuestros esfuerzos a este tipo 
+de dispositivos porque creemos que pueden ser una 
+importante ayuda a evitar contagios. Las últimas 
+evidencias científicas demuestran la transmisión de 
+virus por aerosoles, es decir, por el mismo hecho de 
+respirar. Esto aumenta el nivel de COV (Compuestos 
+Orgánicos Volátiles entre los que se encuentra el 
+virus SARS-CoV-2) algo que va correlacionado con la 
+concentración de CO2. Esta evidencia hace necesaria 
+una correcta ventilación de los espacios cerrados. 
+Lo que es tan importante como mantener una distancia 
+mínima.
 ```
 
 Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https://twitter.com/erguro1973) y de los asistente a varios talleres realizados en el [Fablab de Mallorca](http://fablabmallorca.com/) y organizados por la [Asociación de Makers Mallorca](https://makespacemallorca.org/).
