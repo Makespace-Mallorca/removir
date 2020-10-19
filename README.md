@@ -62,7 +62,7 @@ Como ejemplo de cómo hacerlo, se han usado patrones en cartulina que luego se h
 ### Flujo de aire
 Este es un concepto que hay que tener presente durante todo el rediseño del equipo. Tanto en el aspecto de caudal como el de presión. Una cosa el el volumen de aire por hora que podamos hacer pasar el equipo y otra diferente es la presión que el ventilador pueda aplicar al aire que mueve. Evidentemente ambos parámetros se ven disminuidos respecto al modelo de aire acondicionado original al sustituir el evaporizador por los filtro HEPA que ofrecen mucha más resistencia al paso del aire.
 No está de más valorar las modificaciones haciendo sencillas pruebas de flujo como esta:
-[![RemoVir RealSmokeTest](https://i9.ytimg.com/vi/LHWRh8wFhkA/mq3.jpg?sqp=CKCFsvwF&rs=AOn4CLB6ixDneCUejPWjK88xVdcpWrertw)](https://youtu.be/LHWRh8wFhkA)
+[![RemoVir RealSmokeTest](./img/removir_SmokeTest.png)](https://youtu.be/LHWRh8wFhkA)
 
 ### Certificación
 Como nos gusta saber si el trabajo está bien hecho, y sobre todo, si cumple su función. Una vez instalado mediremos los parámetros de operación como caudal de aire, reducción de COV, etc... para sacar conclusiones sobre mejoras en la siguiente iteracción.
