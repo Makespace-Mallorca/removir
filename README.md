@@ -1,6 +1,4 @@
-# <img src="./img/removir_logo.png" width="50" /> RemoVir <img src="./img/removir_logo.png" width="50" /> 
-
-<p style="font-size: 1.5em; text-align: right;">Estado: <span style="color: #ff0000;">borrador</span></p>
+# <img src="./img/removir_logo.png" width="50" /> RemoVir <img src="./img/removir_logo.png" width="50" /> <img src="./img/borrador.png" align="right" width="100" /> 
 
 ## Este repositorio contiene todos los recursos: instrucciones, código, documentación y datos para ayudarte a reciclar un Split (evaporador interior de aire acondicionado) a un eficiente filtro HEPA
 
