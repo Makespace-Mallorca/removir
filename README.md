@@ -29,7 +29,7 @@ Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https:
 <img src="./img/removir_poster.png" width="400" align="right" />
 
 **¿Con que vamos a trabajar?**
-* Análisis de flujos de aire.
+* Análisis de dinámica de fluidos.
 * Control de motores.
 * Uso de filtros HEPA.
 * Programación C++ e IDE de Arduino
@@ -41,13 +41,13 @@ Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https:
 <img src="./img/IMG_9772.JPG" width="200" align="right" />
 
 ## Primer RemoVir, un _Mínimo Producto Viable_
-Hemos trabajado sobre un Split marca ¿?. Que ha resultado muy adecuado tanto para la sustitución de la electrócnica como para acomodar los filtros HEPA. Aunque se trata de un MPV. pretendemos que alcance un nivel H13 o superior según el estándar europeo EN 1822-1:2009. Incorporaremos un completo sistemas de medición de calidad de aire, CO2, COV, temperatura, humedad y presión atmosférica de manera que sea capaz de adaptar su funcionamiento a las condiciones detectadas.
+Hemos trabajado sobre un Split marca Mundo Clima. Que ha resultado muy adecuado tanto para la sustitución de la electrócnica como para acomodar los filtros HEPA. Aunque se trata de un MPV. pretendemos que alcance un nivel H13 o superior según el estándar europeo EN 1822-1:2009. para ello se van a instalar 3 filtros HEPA H13 de un equipo profesional Honeywell Incorporaremos un completo sistemas de medición de calidad de aire, CO2, COV, temperatura, humedad y presión atmosférica de manera que sea capaz de adaptar su funcionamiento a las condiciones detectadas.
 
 <img src="./img/IMG_9900.JPG" width="200" align="left" />
 
 ### Filtro HEPA (High Efficiency Particulate Air)
 Un filtro HEPA funciona con diferentes principios. Lo que determina el comportamiento de la parte impulsora de aire. Una regla básica a tener en cuenta es que una mayor presión de aire puede bajar la eficiencia en la captura de componentes muy pequeños como virus.
-El producto elegido ha sido ¿?...
+El producto elegido ha sido el modelo empleado en el purificador profesional Honeywell H300 que incorpora filtros HEPA de grado H13
 <img src="./img/HEPA_Fundamentos.png" width="400" align="center" />
 
 ### Electrónica
