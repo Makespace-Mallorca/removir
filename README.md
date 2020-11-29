@@ -24,7 +24,7 @@ mínima.
 <br>
 <br>
 
-Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https://twitter.com/erguro1973) y de los asistente a varios talleres realizados en el [Fablab de Mallorca](http://fablabmallorca.com/) y organizados por la [Asociación de Makers Mallorca](https://makespacemallorca.org/).
+Este proyecto parte de la iniciativa de Ernesto Gutiérrez [@erguro1973](https://twitter.com/erguro1973), de [Carlos Orts](https://github.com/McOrts) [@mcorts](https://twitter.com/mcorts) y de los asistentes a varios talleres realizados en el [Fablab de Mallorca](http://fablabmallorca.com/) y organizados por la [Asociación de Makers Mallorca](https://makespacemallorca.org/).
 
 <img src="./img/removir_poster.png" width="400" align="right" />
 
