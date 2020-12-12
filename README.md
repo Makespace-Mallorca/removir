@@ -24,7 +24,7 @@ mínima.
 <br>
 <br>
 
-Este proyecto parte de la aportación de Ernesto Gutiérrez [@erguro1973](https://twitter.com/erguro1973) y de los asistente a varios talleres realizados en el [Fablab de Mallorca](http://fablabmallorca.com/) y organizados por la [Asociación de Makers Mallorca](https://makespacemallorca.org/).
+Este proyecto parte de la iniciativa de Ernesto Gutiérrez [@erguro1973](https://twitter.com/erguro1973), de [Carlos Orts](https://github.com/McOrts) [@mcorts](https://twitter.com/mcorts) y de los asistentes a varios talleres realizados en el [Fablab de Mallorca](http://fablabmallorca.com/) y organizados por la [Asociación de Makers Mallorca](https://makespacemallorca.org/).
 
 <img src="./img/removir_poster.png" width="400" align="right" />
 
@@ -63,6 +63,14 @@ Como ejemplo de cómo hacerlo, se han usado patrones en cartulina que luego se h
 Este es un concepto que hay que tener presente durante todo el rediseño del equipo. Tanto en el aspecto de caudal como el de presión. Una cosa el el volumen de aire por hora que podamos hacer pasar el equipo y otra diferente es la presión que el ventilador pueda aplicar al aire que mueve. Evidentemente ambos parámetros se ven disminuidos respecto al modelo de aire acondicionado original al sustituir el evaporizador por los filtro HEPA que ofrecen mucha más resistencia al paso del aire.
 No está de más valorar las modificaciones haciendo sencillas pruebas de flujo como esta:
 [![RemoVir RealSmokeTest](./img/removir_SmokeTest.png)](https://youtu.be/LHWRh8wFhkA)
+
+### Montaje
+El proceso de adaptación y transformación de la mecánica y la electrónica, es algo laborioso y nos ha ocupado algunas semanas. 
+* Por una parte hemos tenido que resolver el problema de la sujección mecánica de los filtros en el lugar dejado por el elemento evaporador de aluminio. En un principio de diseñaron soportes imprimibles en 3D par los elementos perpendiculares. Ya que los para las piezas transversales, el material impreso no tienen la rigidez suficiente. Empezamos a utilizar tablero DM que finalmente se ha usado para todo:
+<img src="./img/MontajeFiltros01.jpg" width="400" align="center" />
+
+* En la parte electrónica se ha utilizado la fuente de alimentación original adaptando la tensión con reguladores de tensión. La lógica está programada en C++ corriendo en un microcesador tipo ESP8266 utilizando las mínimas librerias y un solo bloque de código. Aún así el control se puede hacer desde una página web servida directamente por el micro WEMOS D1 Mini PRO a modo de punto de acceso Wifi.
+<img src="./img/Controlador_Motor_PoC.png" width="400" align="center" />
 
 ### Certificación
 Como nos gusta saber si el trabajo está bien hecho, y sobre todo, si cumple su función. Una vez instalado mediremos los parámetros de operación como caudal de aire, reducción de COV, etc... para sacar conclusiones sobre mejoras en la siguiente iteracción.
