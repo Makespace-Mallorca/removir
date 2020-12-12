@@ -72,7 +72,13 @@ El proceso de adaptación y transformación de la mecánica y la electrónica, e
 * En la parte electrónica se ha utilizado la fuente de alimentación original adaptando la tensión con reguladores de tensión. La lógica está programada en C++ corriendo en un microcesador tipo ESP8266 utilizando las mínimas librerias y un solo bloque de código. Aún así el control se puede hacer desde una página web servida directamente por el micro WEMOS D1 Mini PRO a modo de punto de acceso Wifi.
 <img src="./img/Controlador_Motor_PoC.png" width="400" align="center" />
 
-### Certificación
+<img src="./img/removir_primera_integracion.png" width="400" align="right" />
+### Primera integración y prueba
+El segundo sábado de diciembre, en una de las mañanas de _cacharrero_ organizadas por el Fablab de Mallorca. Hemos integrado todos los componentes y hecho la primera prueba de arranque del motor. Las sensaciones han sido buenas. Un nivel de ruido aceptable así como un caudal de salida de aire aparentemente bueno.
+La electrónica parece que está afectada por interferencias que han deshabilitado la conexión wifi en algunos momentos. Y ha detectado falsas pulsaciones en el control manual. Vamos a sustiuir microprocesador, el WEMOS D1 Mini PRO por un WEMOS D1 Mini con encapsulaciento. 
+[![RemoVir primer arranque](./img/removir_primera_arranque.png)](https://youtu.be/MKbnKUOGmzY)
+
+### Mediciones y certificación
 Como nos gusta saber si el trabajo está bien hecho, y sobre todo, si cumple su función. Una vez instalado mediremos los parámetros de operación como caudal de aire, reducción de COV, etc... para sacar conclusiones sobre mejoras en la siguiente iteracción.
 <br>
 Llegado el momento vamos a trabajar sobre la conocida hoja de excel de la Universidad de Hardvard que [tenéis aqui](https://github.com/Makespace-Mallorca/removir/blob/main/doc/Harvard-CU%20Boulder%20Portable%20Air%20Cleaner%20Calculator%20for%20Schools.v1.1.xlsx). Considerando esta plantilla se puede realizar el cálculo del CADR ( CLEAN AIR DELIVERY RATE) necesario del purificador, según el tamaño de la habitación, siendo este un parámetro que se indica en todos estos tipos de elementos. Como orientación, para una habitación media de 50m2 y un nivel de renovación bajo sería necesario al menos uno aparato con capacidad de 400 l/min.
