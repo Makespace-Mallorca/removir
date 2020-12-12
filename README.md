@@ -73,6 +73,7 @@ El proceso de adaptación y transformación de la mecánica y la electrónica, e
 <img src="./img/Controlador_Motor_PoC.png" width="400" align="center" />
 
 <img src="./img/removir_primera_integracion.png" width="400" align="right" />
+
 ### Primera integración y prueba
 El segundo sábado de diciembre, en una de las mañanas de _cacharrero_ organizadas por el Fablab de Mallorca. Hemos integrado todos los componentes y hecho la primera prueba de arranque del motor. Las sensaciones han sido buenas. Un nivel de ruido aceptable así como un caudal de salida de aire aparentemente bueno.
 La electrónica parece que está afectada por interferencias que han deshabilitado la conexión wifi en algunos momentos. Y ha detectado falsas pulsaciones en el control manual. Vamos a sustiuir microprocesador, el WEMOS D1 Mini PRO por un WEMOS D1 Mini con encapsulaciento.
