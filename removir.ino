@@ -1,10 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-
-/* SSID y clave de la wifi que sirve */
-const char* ssid = "Removir";
-const char* password = "12345678"; 
+#include "settings.h"
 
 /* IP direcciones */
 IPAddress local_ip(192,168,1,1);
@@ -23,17 +20,6 @@ bool REL1status = LOW;
 bool REL2status = LOW;
 bool REL3status = LOW;
 bool REL4status = LOW;
-
-
-   
-/* Definición de pines */
-const int PinBoton = 2;
-const int PinRele1 = 13;
-const int PinRele2 = 12;
-const int PinRele3 = 14;
-const int PinRele4 = 16;
-const int PIN_STRIP_1 = 0;
-const int NUMPIXELS_STRIP_1 = 15;
 
 /* Configuración led NEOPIXEL */
 Adafruit_NeoPixel pixels_STRIP_1  = Adafruit_NeoPixel(NUMPIXELS_STRIP_1, PIN_STRIP_1, NEO_GRB + NEO_KHZ800);
@@ -61,15 +47,21 @@ void setup() {
   Serial.println("HTTP server started");
 
   /* Iniciar RELEs */
-  pinMode(PinRele1 , OUTPUT);
-  pinMode(PinRele2 , OUTPUT); 
-  pinMode(PinRele3 , OUTPUT); 
-  pinMode(PinRele4 , OUTPUT); 
-  digitalWrite(PinRele1, LOW );
-  digitalWrite(PinRele2, LOW );
-  digitalWrite(PinRele3, LOW );
-  digitalWrite(PinRele4, LOW );
- 
+  switch (velocidades) {
+  case 4:
+    pinMode(PinRele4 , OUTPUT); 
+    digitalWrite(PinRele4, LOW );
+  case 3:
+    pinMode(PinRele3 , OUTPUT); 
+    digitalWrite(PinRele3, LOW );
+  case 2:
+    pinMode(PinRele2 , OUTPUT); 
+    digitalWrite(PinRele2, LOW );
+  case 1:
+    pinMode(PinRele1 , OUTPUT);
+    digitalWrite(PinRele1, LOW );
+  }
+  
   /* Iniciar pulsador */
   pinMode(PinBoton , INPUT);
 
@@ -80,13 +72,12 @@ void setup() {
      pixels_STRIP_1.show(); // This sends the updated pixel color to the hardware.
      delay (100);
   }
-
 }
 
 void loop() {
   server.handleClient();
 
-  /* Comandos desde la págiana web */
+  /* Comandos desde la página web */
   if(REL1status){
     velocidad = 1;
     }
@@ -114,8 +105,8 @@ void loop() {
   if (BotonPulsado == LOW) {
     Serial.println("Boton pulsado");
     velocidad += 1;
-    delay (500);    
-    if (velocidad == 5) {
+    delay (EsperaCambio);    
+    if (velocidad == velocidades+1) {
       velocidad = 0;      
     }
   }
@@ -182,33 +173,45 @@ void loop() {
 }
 
 void leds(){
-  if (velocidad == 0) {
-    pixels_STRIP_1.fill(pixels_STRIP_1.Color(0, 0, 0),0, pixels_STRIP_1.numPixels()); // black  
-  } else {
-    if (velocidad == 4) {
-      pixels_STRIP_1.fill(pixels_STRIP_1.Color(255, 255, 255),0, pixels_STRIP_1.numPixels()); // white  
+  if (LEDsBinarios) {
+    if (velocidad == 0) {
+      pixels_STRIP_1.fill(pixels_STRIP_1.Color(0, 0, 0),0, pixels_STRIP_1.numPixels()); // black  
     } else {
-      for(int i=0;i<NUMPIXELS_STRIP_1;i++){
-        pixels_STRIP_1.setPixelColor(i, pixels_STRIP_1.Color(0,0,255)); // blue color.
-      } 
-      switch (velocidad) {
-        case 3:
-          pixels_STRIP_1.setPixelColor(2, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(3, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(11, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(12, pixels_STRIP_1.Color(255,255,255)); // blue color.
-        case 2:             
-          pixels_STRIP_1.setPixelColor(4, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(5, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(9, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(10, pixels_STRIP_1.Color(255,255,255)); // blue color.
-        case 1:             
-          pixels_STRIP_1.setPixelColor(6, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(7, pixels_STRIP_1.Color(255,255,255)); // blue color.
-          pixels_STRIP_1.setPixelColor(8, pixels_STRIP_1.Color(255,255,255)); // blue color.
+      if (velocidad == 1) {
+        pixels_STRIP_1.fill(pixels_STRIP_1.Color(0,255,0),0, pixels_STRIP_1.numPixels()); // green  
+      } else {
+        pixels_STRIP_1.fill(pixels_STRIP_1.Color(255,0,0),0, pixels_STRIP_1.numPixels()); // red 
+      }
+    }
+  } else { 
+    if (velocidad == 0) {
+      pixels_STRIP_1.fill(pixels_STRIP_1.Color(0, 0, 0),0, pixels_STRIP_1.numPixels()); // black  
+    } else {
+      if (velocidad == 4) {
+        pixels_STRIP_1.fill(pixels_STRIP_1.Color(255, 255, 255),0, pixels_STRIP_1.numPixels()); // white  
+      } else {
+        for(int i=0;i<NUMPIXELS_STRIP_1;i++){
+          pixels_STRIP_1.setPixelColor(i, pixels_STRIP_1.Color(0,0,255)); // blue color.
+        } 
+        switch (velocidad) {
+          case 3:
+            pixels_STRIP_1.setPixelColor(2, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(3, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(11, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(12, pixels_STRIP_1.Color(255,255,255)); // blue color.
+          case 2:             
+            pixels_STRIP_1.setPixelColor(4, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(5, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(9, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(10, pixels_STRIP_1.Color(255,255,255)); // blue color.
+          case 1:             
+            pixels_STRIP_1.setPixelColor(6, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(7, pixels_STRIP_1.Color(255,255,255)); // blue color.
+            pixels_STRIP_1.setPixelColor(8, pixels_STRIP_1.Color(255,255,255)); // blue color.
         }
       }
     }
+  }
   pixels_STRIP_1.show(); // This sends the updated pixel color to the hardware.
 }    
       
@@ -305,28 +308,28 @@ String SendHTML(uint8_t rel1stat,uint8_t rel2stat,uint8_t rel3stat,uint8_t rel4s
   ptr +="<h1>Removir</h1>\n";
   ptr +="<h2>Filtro HEPA de reciclaje</h2>\n";
   ptr +="<h3>Velocidad del motor:</h3>\n";
-  
-  if(rel1stat)
-  {ptr +="<a class=\"button button-off\" href=\"/rel1off\">OFF</a>\n";}
-  else
-  {ptr +="<a class=\"button button-on\" href=\"/rel1on\">1</a>\n";}
-
-  if(rel2stat)
-  {ptr +="<a class=\"button button-off\" href=\"/rel2off\">OFF</a>\n";}
-  else
-  {ptr +="<a class=\"button button-on\" href=\"/rel2on\">2</a>\n";}
-
-  if(rel3stat)
-  {ptr +="<a class=\"button button-off\" href=\"/rel3off\">OFF</a>\n";}
-  else {
-    ptr +="<a class=\"button button-on\" href=\"/rel3on\">3</a>\n";
+  switch (velocidades) {
+  case 4:
+    if(rel4stat)
+        {ptr +="<a class=\"button button-off\" href=\"/rel4off\">OFF</a>\n";}
+    else
+        {ptr +="<a class=\"button button-on\" href=\"/rel4on\">4</a>\n";}
+  case 3:
+    if(rel3stat)
+        {ptr +="<a class=\"button button-off\" href=\"/rel3off\">OFF</a>\n";}
+    else 
+        {ptr +="<a class=\"button button-on\" href=\"/rel3on\">3</a>\n";}
+  case 2:
+    if(rel2stat)
+      {ptr +="<a class=\"button button-off\" href=\"/rel2off\">OFF</a>\n";}
+    else
+      {ptr +="<a class=\"button button-on\" href=\"/rel2on\">2</a>\n";}
+  case 1:
+    if(rel1stat)
+      {ptr +="<a class=\"button button-off\" href=\"/rel1off\">OFF</a>\n";}
+    else
+      {ptr +="<a class=\"button button-on\" href=\"/rel1on\">1</a>\n";}
   }
-
-  if(rel4stat)
-  {ptr +="<a class=\"button button-off\" href=\"/rel4off\">OFF</a>\n";}
-  else
-  {ptr +="<a class=\"button button-on\" href=\"/rel4on\">4</a>\n";}
-
   ptr +="</body>\n";
   ptr +="</html>\n";
   return ptr;
